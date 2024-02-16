@@ -175,9 +175,11 @@ void re4t::init::Gameplay()
 
 		// Our new fire power array
 		float NewChicagoFirepower[] = { 0.9f, 1.5f, 1.7f, 2.0f, 2.5f, 3.5f, 10.0f };
+		float NewChicagoReload[] = { 2.83r, 2.15r, 1.41r };
 
 		// Write new values
 		std::copy(std::begin(NewChicagoFirepower), std::end(NewChicagoFirepower), std::begin((*WeaponLevelTbl)[TypewriterNumLeon]));
+		std::copy(std::begin(NewChicagoReload), std::end(NewChicagoReload), std::begin((*WeaponLevelTbl)[TypewriterNumLeon]));
 		/* std::copy(std::begin(NewChicagoFirepower), std::end(NewChicagoFirepower), std::begin((*WeaponLevelTbl)[TypewriterNumAda])); */
 
 		// Nop special case inside dispBuyItemList that makes the weapon stats be shown as fully upgraded
@@ -205,7 +207,7 @@ void re4t::init::Gameplay()
 		static auto merchantData = *pattern.count(1).get(0).get<MERCHANT_DATA(*)[1]>(1);
 
 		static LEVEL_INFO level_ext_tompson[2] = {
-			{ 0x34, {7, 1, 1, 7}, {0, 0} },
+			{ 0x34, {7, 1, 3, 7}, {0, 0} },
 			{ 0xFFFF, {0, 0, 0, 0}, {0, 0} }
 		};
 		
